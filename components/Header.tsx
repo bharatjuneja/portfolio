@@ -44,7 +44,7 @@ export function Header() {
               Bharat Juneja
             </span>
             <span className="font-label-badge text-label-badge uppercase tracking-wider text-text-muted">
-              Staff iOS Engineer
+              SDE 3
             </span>
           </div>
         </a>

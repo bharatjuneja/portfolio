@@ -239,7 +239,7 @@ export default function HomePage() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-tertiary" />
                   </span>
                   <span className="font-label-code text-label-code uppercase tracking-wide text-on-surface">
-                    Available for Staff / Lead iOS Roles
+                    SDE 3 • iOS
                   </span>
                 </div>
 

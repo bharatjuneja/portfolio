@@ -23,7 +23,7 @@ export function Contact() {
         <div className="flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1">
           <span className="h-2 w-2 animate-pulse rounded-full bg-tertiary" />
           <span className="font-label-code text-label-code font-semibold uppercase tracking-wider text-tertiary">
-            Staff • Lead Mobile Roles
+            SDE 3 • iOS
           </span>
         </div>
         <h2 className="font-headline-lg text-headline-lg-mobile font-bold tracking-tight text-on-surface md:text-headline-lg">
@@ -60,7 +60,7 @@ export function Contact() {
         <div className="flex flex-wrap items-center justify-center gap-3 pt-4 font-label-code text-label-code text-text-muted">
           <span>Location: India (Remote / Hybrid)</span>
           <span>•</span>
-          <span>Notice: Standard Staff Transition</span>
+          <span>Open to iOS opportunities</span>
         </div>
       </div>
     </section>

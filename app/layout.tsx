@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bharat Juneja | Staff iOS Engineer",
+  title: "Bharat Juneja | SDE 3",
   description:
     "SDE 3 specializing in server-driven UI, modular frameworks, and high-concurrency UIKit pipelines. Display Network SDK at Nykaa.",
 };
