@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type AppKey = "nykaa" | "byjus" | "netgear";
 
@@ -26,27 +26,7 @@ const schema = `{
 export function PhoneSimulator() {
   const [app, setApp] = useState<AppKey>("nykaa");
   const [inspect, setInspect] = useState(false);
-  const [highlighted, setHighlighted] = useState(false);
   const island = tabs.find((tab) => tab.key === app)?.island ?? "SDUI";
-
-  useEffect(() => {
-    let timer = 0;
-    const onInspect = () => {
-      setApp("nykaa");
-      setInspect(true);
-      setHighlighted(true);
-      window.clearTimeout(timer);
-      timer = window.setTimeout(() => setHighlighted(false), 1600);
-      if (window.matchMedia("(max-width: 1023px)").matches) {
-        document.getElementById("simulator")?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    };
-    window.addEventListener("portfolio:inspect-demo", onInspect);
-    return () => {
-      window.clearTimeout(timer);
-      window.removeEventListener("portfolio:inspect-demo", onInspect);
-    };
-  }, []);
 
   return (
     <div id="simulator" className="relative z-10 flex scroll-mt-24 flex-col items-center justify-center lg:col-span-7">
@@ -71,11 +51,7 @@ export function PhoneSimulator() {
         })}
       </div>
 
-      <div
-        className={`relative h-[680px] w-full max-w-[310px] rounded-[54px] bg-gradient-to-b from-[#1C2330] via-[#0E131E] to-[#161B26] p-[10px] shadow-[0_32px_80px_-16px_rgba(0,0,0,0.8),0_0_40px_rgba(0,113,227,0.2)] transition-all duration-500 hover:scale-[1.01] sm:h-[720px] sm:max-w-[370px] ${
-          highlighted ? "scale-[1.02] ring-4 ring-primary shadow-[0_0_48px_rgba(0,113,227,0.55)]" : ""
-        }`}
-      >
+      <div className="relative h-[680px] w-full max-w-[310px] rounded-[54px] bg-gradient-to-b from-[#1C2330] via-[#0E131E] to-[#161B26] p-[10px] shadow-[0_32px_80px_-16px_rgba(0,0,0,0.8),0_0_40px_rgba(0,113,227,0.2)] transition-transform duration-500 hover:scale-[1.01] sm:h-[720px] sm:max-w-[370px]">
         <div className="absolute -left-[13px] top-[115px] h-[28px] w-[3px] rounded-l-sm bg-surface-variant opacity-80" />
         <div className="absolute -left-[13px] top-[160px] h-[48px] w-[3px] rounded-l-sm bg-surface-variant opacity-80" />
         <div className="absolute -left-[13px] top-[220px] h-[48px] w-[3px] rounded-l-sm bg-surface-variant opacity-80" />

@@ -2,7 +2,6 @@ import { Constellation } from "@/components/Constellation";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { InspectDemoButton } from "@/components/InspectDemoButton";
 import { PhoneSimulator } from "@/components/PhoneSimulator";
 
 const stages = [
@@ -270,13 +269,19 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <InspectDemoButton />
+                  <a
+                    href="#experience"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary-container px-6 py-3 font-body-md text-body-md font-semibold text-on-primary-container shadow-[0_0_24px_rgba(0,113,227,0.45)] transition-all hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(0,113,227,0.65)] active:scale-[0.98]"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">work</span>
+                    See the work
+                  </a>
                   <a
                     href="#engine-room"
-                    className="inline-flex items-center gap-2 rounded-full bg-surface-container-high/70 px-6 py-3 font-body-md text-body-md font-medium text-on-surface shadow-sm backdrop-blur-md transition-all hover:scale-[1.02] hover:bg-surface-container-high active:scale-[0.98]"
+                    className="inline-flex items-center gap-2 rounded-full bg-surface-container-high/70 px-6 py-3 text-left font-body-md text-body-md font-medium text-on-surface shadow-sm backdrop-blur-md transition-all hover:scale-[1.02] hover:bg-surface-container-high active:scale-[0.98]"
                   >
-                    <span className="material-symbols-outlined text-[20px]">layers</span>
-                    Explore Architecture
+                    <span className="material-symbols-outlined text-[20px]">rocket_launch</span>
+                    How ads ship without an App Store release
                   </a>
                 </div>
 
