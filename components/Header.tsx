@@ -14,22 +14,20 @@ export function Header() {
   const [active, setActive] = useState("simulator");
 
   useEffect(() => {
-    const sections = links
-      .map((link) => document.getElementById(link.id))
-      .filter((node): node is HTMLElement => Boolean(node));
+    const onScroll = () => {
+      const line = 120;
+      let current = links[0].id;
+      for (const link of links) {
+        const node = document.getElementById(link.id);
+        if (!node) continue;
+        if (node.getBoundingClientRect().top <= line) current = link.id;
+      }
+      setActive(current);
+    };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActive(visible.target.id);
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0.15, 0.4] },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -54,6 +52,7 @@ export function Header() {
             <a
               key={link.id}
               href={link.href}
+              onClick={() => setActive(link.id)}
               className={`rounded-full px-space-md py-1.5 font-body-sm text-body-sm transition-all ${
                 active === link.id
                   ? "bg-primary-container text-on-primary-container shadow-[0_0_12px_rgba(0,113,227,0.35)]"
@@ -74,13 +73,12 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary md:pointer-events-none"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-on-primary md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
-            <span className="material-symbols-outlined text-[18px] md:hidden">{open ? "close" : "menu"}</span>
-            <span className="material-symbols-outlined hidden text-[18px] md:inline">person</span>
+            <span className="material-symbols-outlined text-[22px] leading-none">{open ? "close" : "menu"}</span>
           </button>
         </div>
       </div>

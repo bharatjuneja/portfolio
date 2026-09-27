@@ -2,6 +2,7 @@ import { Constellation } from "@/components/Constellation";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { InspectDemoButton } from "@/components/InspectDemoButton";
 import { PhoneSimulator } from "@/components/PhoneSimulator";
 
 const stages = [
@@ -269,13 +270,7 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <a
-                    href="#simulator"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary-container px-6 py-3 font-body-md text-body-md font-semibold text-on-primary-container shadow-[0_0_24px_rgba(0,113,227,0.45)] transition-all hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(0,113,227,0.65)] active:scale-[0.98]"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">phone_iphone</span>
-                    Interact with Demo Device
-                  </a>
+                  <InspectDemoButton />
                   <a
                     href="#engine-room"
                     className="inline-flex items-center gap-2 rounded-full bg-surface-container-high/70 px-6 py-3 font-body-md text-body-md font-medium text-on-surface shadow-sm backdrop-blur-md transition-all hover:scale-[1.02] hover:bg-surface-container-high active:scale-[0.98]"
@@ -307,7 +302,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="engine-room" className="relative w-full bg-surface-container-lowest/50 px-6 py-24 lg:px-12">
+        <section id="engine-room" className="relative w-full scroll-mt-24 bg-surface-container-lowest/50 px-6 py-24 lg:px-12">
           <div className="mx-auto flex max-w-7xl flex-col gap-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div className="flex flex-col gap-2">
@@ -400,7 +395,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="experience" className="w-full bg-surface px-6 py-24 lg:px-12">
+        <section id="experience" className="w-full scroll-mt-24 bg-surface px-6 py-24 lg:px-12">
           <div className="mx-auto flex max-w-7xl flex-col gap-12">
             <div className="flex flex-col gap-2">
               <span className="font-label-code text-label-code font-semibold uppercase tracking-wider text-tertiary">
@@ -478,7 +473,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="arsenal" className="relative w-full bg-surface-container-lowest/50 px-6 py-24 lg:px-12">
+        <section id="arsenal" className="relative w-full scroll-mt-24 bg-surface-container-lowest/50 px-6 py-24 lg:px-12">
           <div className="mx-auto flex max-w-7xl flex-col gap-12">
             <div className="flex flex-col gap-2">
               <span className="font-label-code text-label-code font-semibold uppercase tracking-wider text-primary">
