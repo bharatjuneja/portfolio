@@ -1,4 +1,4 @@
-# Bharat Juneja — SDE 3 iOS Engineer
+# Bharat Juneja — SDE 3 iOS
 
 Updated portfolio built from the Titanium Craft design: a dark glass interface with an interactive constellation and a device demo for Nykaa SDUI, Byju's DRM, and Netgear IoT.
 
